@@ -1,6 +1,6 @@
 # Power Connex · Interactive 3D Explorer
 
-เว็บสำรวจโมเดลรางไฟด้วย **Vite 6 + Three.js** ใช้ GLB ต้นฉบับ 75 mesh objects โดยเก็บชื่อและ hierarchy เดิม ไม่มี backend และไม่มีบริการภายนอกที่ต้องใช้ขณะเปิดเว็บ
+เว็บสำรวจโมเดลรางไฟด้วย **Vite 6 + Three.js** ใช้ GLB รุ่น assembly 2 มี 77 mesh objects และ 57 interactive parts โดยเก็บชื่อชิ้นส่วนเดิม ไม่มี backend และไม่มีบริการภายนอกที่ต้องใช้ขณะเปิดเว็บ
 
 ## เปิดเว็บ
 
@@ -24,7 +24,7 @@ npm run dev
 - หมุนอัตโนมัติ เปิดภาพอ้างอิงสามมุม และดาวน์โหลด GLB
 - ใช้งานด้วย touch และเลือกชิ้นส่วนผ่านปุ่มด้วยคีย์บอร์ดได้
 
-ปุ่มลัด: `F` จัดมุมมอง, `Esc` ยกเลิกการเลือก, `/` ค้นหา, `R` เริ่มต้นใหม่ การย้ายและการซ่อนเก็บใน session ปัจจุบัน ไม่เขียนทับโมเดลต้นฉบับ
+ปุ่มลัด: `F` จัดมุมมอง, `Esc` ยกเลิกการเลือก, `/` ค้นหา, `R` เริ่มต้นใหม่ โลโก้และตัวอักษรเป็นลูกของฝา เลือกและย้ายแยกไม่ได้ ที่ 0% จะล้าง manual offsets แสดงทุกชิ้น และประกอบกลับทั้งหมด พร้อมปิดโหมดย้ายชั่วคราวจนกว่าจะเพิ่มระดับการแยกชิ้น การสำรวจไม่เขียนทับโมเดลต้นฉบับ
 
 ## Build และตรวจสอบ
 
@@ -46,11 +46,12 @@ GitHub Actions รัน Node tests, production build และ browser acceptan
 
 ## โครงสร้าง
 
+- `src/assembly.js` — pose, ownership ของลวดลาย และการยึดกับฝาที่ใช้ร่วมกับ tests
 - `src/viewer.js` — Three.js scene, GLTFLoader, OrbitControls, TransformControls, picking และ pose interpolation
 - `src/main.js` — UI, tree, search, selection, dialogs และ keyboard controls
 - `src/parts.js` — คำอธิบายชิ้นส่วน กลุ่ม และฟังก์ชันคำนวณ pose
 - `public/assets/` — โมเดล GLB, inventory, ภาพอ้างอิง และ fallback preview
 
-ใช้ `assembled_location_gltf_m` / `exploded_location_gltf_m` จาก glTF extras โดยตรง (เมตร, Y-up) ส่วนตำแหน่งที่ผู้ใช้ย้ายเป็น offset เพิ่มจาก pose ปัจจุบัน เมื่อเลื่อน slider จึงไม่ล้างระยะที่ผู้ใช้ย้ายเอง การกดคืนตำแหน่งจะล้าง offset
+ใช้ `assembled_location_gltf_m` / `exploded_location_gltf_m` จาก glTF extras โดยตรง (เมตร, Y-up) ส่วนตำแหน่งที่ผู้ใช้ย้ายเป็น offset เพิ่มจาก pose ปัจจุบัน เมื่อเลื่อน slider ที่ระดับมากกว่า 0% จึงไม่ล้างระยะที่ผู้ใช้ย้ายเอง แต่ที่ 0% จะล้างทุก offset การกดคืนตำแหน่งจะล้าง offset
 
 ขนาดตัวรางและรายละเอียดที่ภาพอ้างอิงไม่แสดงเป็นค่าประมาณตามโมเดลเดิม

@@ -4,6 +4,7 @@ import { TransformControls } from 'three/addons/controls/TransformControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { interpolatePose } from './parts.js';
+import { AssemblyRig } from './assembly.js';
 
 const ZERO = [0, 0, 0];
 const PRESETS = { iso: [-.54, .32, .64], front: [0, .12, .8], top: [0, .85, .0001] };
@@ -74,18 +75,16 @@ export class ProductViewer extends EventTarget {
   async load(url) {
     const gltf = await new GLTFLoader().loadAsync(url, event => this.emit('progress', event.total ? Math.round(event.loaded / event.total * 100) : null));
     this.model = gltf.scene; this.scene.add(this.model);
-    this.model.traverse(o => {
-      if (!o.isMesh) return;
-      const a = o.userData.assembled_location_gltf_m, e = o.userData.exploded_location_gltf_m;
-      if (!Array.isArray(a) || !Array.isArray(e) || a.length !== 3 || e.length !== 3 || ![...a, ...e].every(Number.isFinite)) throw new Error(`ข้อมูลตำแหน่งของ ${o.name} ไม่ครบ`);
-      this.parts.push(o); this.poses.set(o.uuid, { assembled: a, exploded: e });
+    this.rig = new AssemblyRig(this.model);
+    this.parts = this.rig.parts; this.meshes = this.rig.meshes; this.poses = this.rig.poses; this.offsets = this.rig.offsets;
+    for (const o of this.meshes) {
       // Each mesh needs its own selection tint; source geometry remains shared.
       o.material = Array.isArray(o.material) ? o.material.map(m => m.clone()) : o.material.clone();
       o.castShadow = true; o.receiveShadow = true;
-    });
-    if (!this.parts.length) throw new Error('ไม่พบชิ้นส่วนในไฟล์โมเดล');
+    }
     this.applyPose(); this.ready = true; this.fit('iso', false);
     this.emit('ready', { count: this.parts.length });
+    this.refreshVisibility();
     return this.parts;
   }
   resize() { const { width, height } = this.element.getBoundingClientRect(); if (!width || !height) return; this.camera.aspect = width / height; this.camera.updateProjectionMatrix(); this.renderer.setSize(width, height); }
@@ -93,10 +92,11 @@ export class ProductViewer extends EventTarget {
     if (!this.ready) return null;
     const rect = this.element.getBoundingClientRect(); this.pointer.set((event.clientX - rect.left) / rect.width * 2 - 1, -(event.clientY - rect.top) / rect.height * 2 + 1);
     this.raycaster.setFromCamera(this.pointer, this.camera);
-    return this.raycaster.intersectObjects(this.parts.filter(o => o.visible), false)[0]?.object ?? null;
+    const hit = this.raycaster.intersectObjects(this.parts.filter(o => o.visible), true)[0]?.object;
+    return this.rig.resolve(hit);
   }
   select(objectOrName) {
-    const object = typeof objectOrName === 'string' ? this.parts.find(o => o.name === objectOrName) : objectOrName;
+    const object = this.rig?.resolve(objectOrName);
     if (this.selected) this.tint(this.selected, false);
     this.transform.detach(); this.selected = object ?? null;
     if (this.selected) { this.tint(this.selected, true); this.hiddenParts.delete(this.selected.name); }
@@ -104,18 +104,22 @@ export class ProductViewer extends EventTarget {
     this.refreshVisibility(); this.emit('selection', this.selected?.name ?? null);
   }
   tint(object, active) {
-    for (const m of Array.isArray(object.material) ? object.material : [object.material]) {
-      if (m.emissive) { m.emissive.set(active ? 0xc8562f : 0x000000); m.emissiveIntensity = active ? .28 : 0; }
-    }
+    object.traverse(child => {
+      for (const m of Array.isArray(child.material) ? child.material : child.material ? [child.material] : []) {
+        if (m.emissive) { m.emissive.set(active ? 0xc8562f : 0x000000); m.emissiveIntensity = active ? .28 : 0; }
+      }
+    });
   }
-  setExplosion(value) { this.targetExplosion = THREE.MathUtils.clamp(value, 0, 1); if (this.reducedMotion) { this.explosion = this.targetExplosion; this.applyPose(); } }
-  applyPose() {
-    for (const o of this.parts) {
-      if (this.dragging && o === this.selected) continue;
-      const pose = this.poses.get(o.uuid);
-      o.position.fromArray(interpolatePose(pose.assembled, pose.exploded, this.explosion, this.offsets.get(o.uuid) ?? ZERO));
+  setExplosion(value) {
+    this.targetExplosion = THREE.MathUtils.clamp(value, 0, 1);
+    if (this.targetExplosion === 0) {
+      this.transform.detach(); this.transform.dragging = false; this.dragging = false; this.controls.enabled = true;
+      this.offsets.clear(); this.showAll(); this.emit('move-mode', false);
     }
-    this.model?.updateMatrixWorld(true);
+    if (this.reducedMotion) { this.explosion = this.targetExplosion; this.applyPose(); }
+  }
+  applyPose() {
+    this.rig?.applyPose(this.explosion, this.dragging ? this.selected : null);
   }
   refreshVisibility() {
     for (const o of this.parts) o.visible = !this.hiddenParts.has(o.name) && (!this.isolated || o === this.selected);
@@ -123,19 +127,22 @@ export class ProductViewer extends EventTarget {
     this.emit('visibility', { visible: this.parts.filter(o => o.visible).length, total: this.parts.length, isolated: this.isolated });
   }
   hide(name = this.selected?.name) {
+    name = this.rig?.resolve(name)?.name;
     if (!name) return;
     this.hiddenParts.add(name);
     if (this.selected?.name === name) this.select(null);
     this.refreshVisibility();
   }
   toggleVisibility(name) {
+    name = this.rig?.resolve(name)?.name;
+    if (!name) return;
     if (this.hiddenParts.has(name)) this.hiddenParts.delete(name); else this.hide(name);
     this.refreshVisibility();
   }
   showAll() { this.hiddenParts.clear(); this.isolated = false; this.refreshVisibility(); }
   toggleIsolation() { if (!this.selected) return; this.isolated = !this.isolated; this.refreshVisibility(); if (this.isolated) this.focus(this.selected); else this.fit(); }
   toggleMove() {
-    if (!this.selected?.visible) return false;
+    if (!this.selected?.visible || this.targetExplosion === 0) return false;
     if (this.transform.object) { this.transform.detach(); return false; }
     this.transform.attach(this.selected); this.emit('autorotate', false); this.controls.autoRotate = false; return true;
   }
@@ -162,11 +169,11 @@ export class ProductViewer extends EventTarget {
   }
   reset() { this.offsets.clear(); this.showAll(); this.select(null); this.setAutoRotate(false); this.targetExplosion = 1; this.explosion = 1; this.applyPose(); this.fit('iso'); }
   project(name, localPoint = null) {
-    const o = this.parts.find(p => p.name === name); if (!o) return null;
+    const o = this.rig?.byName.get(name); if (!o) return null;
     const p = (localPoint ? o.localToWorld(new THREE.Vector3().fromArray(localPoint)) : this.bounds(o).getCenter(new THREE.Vector3())).project(this.camera), r = this.element.getBoundingClientRect();
     return { x: r.left + (p.x + 1) * r.width / 2, y: r.top + (1 - p.y) * r.height / 2 };
   }
-  snapshot() { return { ready: this.ready, selected: this.selected?.name ?? null, explosion: this.explosion, targetExplosion: this.targetExplosion, isolated: this.isolated, autoRotate: this.controls.autoRotate, moving: !!this.transform.object, hidden: [...this.hiddenParts], visible: this.parts.filter(o => o.visible).length, count: this.parts.length, parts: this.parts.map(o => ({ name: o.name, position: o.position.toArray(), assembled: this.poses.get(o.uuid).assembled, exploded: this.poses.get(o.uuid).exploded, offset: this.offsets.get(o.uuid) ?? ZERO })) }; }
+  snapshot() { return { ready: this.ready, selected: this.selected?.name ?? null, explosion: this.explosion, targetExplosion: this.targetExplosion, isolated: this.isolated, autoRotate: this.controls.autoRotate, moving: !!this.transform.object, hidden: [...this.hiddenParts], visible: this.parts.filter(o => o.visible).length, count: this.parts.length, meshCount: this.meshes?.length ?? 0, attachments: (this.meshes ?? []).filter(o => o.userData.interaction_owner).map(o => ({ name: o.name, owner: o.parent.name, localPosition: o.position.toArray(), worldPosition: o.getWorldPosition(new THREE.Vector3()).toArray() })), parts: this.parts.map(o => ({ name: o.name, position: o.position.toArray(), assembled: this.poses.get(o.uuid).assembled, exploded: this.poses.get(o.uuid).exploded, offset: this.offsets.get(o.uuid) ?? ZERO })) }; }
   animate = () => {
     if (!this.running) return;
     this.animationId = requestAnimationFrame(this.animate);

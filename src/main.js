@@ -15,6 +15,8 @@ function setPose(value) {
   $('#explosion-value').innerHTML = `${percentage}<span>%</span>`;
   $('#stage-caption').textContent = percentage === 0 ? 'ASSEMBLED VIEW' : percentage === 100 ? 'EXPLODED VIEW' : 'ASSEMBLY EXPLORATION';
   viewer?.setExplosion(percentage / 100);
+  $('#move-button').disabled = percentage === 0;
+  if (percentage === 0) $('#move-button').setAttribute('aria-pressed', 'false');
 }
 function renderTree() {
   const tree = $('#parts-tree'), query = $('#part-search').value, selected = viewer?.selected?.name;
@@ -79,6 +81,7 @@ async function start() {
     });
     viewer.addEventListener('progress', event => { if (event.detail != null) $('#loading-message').textContent = `กำลังโหลดโมเดล ${event.detail}%`; });
     viewer.addEventListener('autorotate', event => $('#rotate-button').setAttribute('aria-pressed', String(event.detail)));
+    viewer.addEventListener('move-mode', event => $('#move-button').setAttribute('aria-pressed', String(event.detail)));
     viewer.addEventListener('error', event => showError(event.detail));
     viewer.addEventListener('hover', event => {
       const label = $('#hover-label'); if (!event.detail) { label.hidden = true; return; }
@@ -86,7 +89,7 @@ async function start() {
       label.style.left = `${Math.min(event.detail.x - rect.left + 16, rect.width - label.offsetWidth - 12)}px`;
       label.style.top = `${Math.max(10, event.detail.y - rect.top - 34)}px`;
     });
-    parts = await viewer.load(`${base}assets/powerconnex_exploded.glb`);
+    parts = await viewer.load(`${base}assets/powerconnex_exploded.glb?v=assembly-2`);
     renderTree(); selectionChanged(null); setPose(100); $('#loading').hidden = true;
     announce(`โมเดลพร้อมใช้งาน ${parts.length} ชิ้นส่วน`);
     // Small diagnostic surface for reproducible browser acceptance checks.

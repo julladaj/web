@@ -7,12 +7,19 @@ const binary = fs.readFileSync(new URL('../public/assets/powerconnex_exploded.gl
 const jsonLength = binary.readUInt32LE(12);
 const gltf = JSON.parse(binary.subarray(20, 20 + jsonLength).toString());
 const nodes = gltf.nodes.filter(node => node.mesh !== undefined);
-test('all 75 source meshes retain usable local glTF poses and belong to a listed group', () => {
-  assert.equal(nodes.length, 75);
+test('77 meshes retain usable poses; 20 decorations are attached permanently', () => {
+  assert.equal(nodes.length, 77);
+  assert.equal(nodes.filter(node => !node.extras.interaction_owner).length, 57);
   const groups = new Map();
   for (const group of GROUPS) { const node = gltf.nodes.find(node => node.name === group.id); assert.ok(node, group.id); for (const child of node.children) groups.set(child, group.id); }
   for (const node of nodes) {
-    const index = gltf.nodes.indexOf(node); assert.ok(groups.has(index), node.name);
+    const index = gltf.nodes.indexOf(node);
+    if (node.extras.interaction_owner) {
+      const owner = gltf.nodes.find(n => n.name === node.extras.interaction_owner);
+      assert.ok(owner?.children.includes(index), node.name);
+      assert.ok(groups.has(gltf.nodes.indexOf(owner)), node.name);
+      assert.deepEqual(node.extras.assembled_location_gltf_m, node.extras.exploded_location_gltf_m);
+    } else assert.ok(groups.has(index), node.name);
     for (const key of ['assembled_location_gltf_m', 'exploded_location_gltf_m']) { assert.equal(node.extras[key].length, 3); assert.ok(node.extras[key].every(Number.isFinite)); }
     const position = node.translation ?? [0, 0, 0];
     node.extras.exploded_location_gltf_m.forEach((coordinate, axis) => assert.ok(Math.abs(coordinate - position[axis]) < 1e-7, node.name));

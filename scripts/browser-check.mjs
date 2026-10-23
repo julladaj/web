@@ -29,11 +29,15 @@ try {
   await mkdir(artifacts, { recursive: true });
   await page.screenshot({ path: path.join(artifacts, 'desktop.png') });
   assert.equal(await page.$eval('#loading', element => element.hidden), true);
-  assert.equal(await page.evaluate(() => window.__explorer.getState().count), 75);
+  assert.equal(await page.evaluate(() => window.__explorer.getState().count), 57);
+  assert.equal(await page.evaluate(() => window.__explorer.getState().meshCount), 77);
+  assert.equal(await page.$$eval('[data-part*="PowerConnex_Logo"], [data-part*="Marking_"]', elements => elements.length), 0);
 
   await page.click('#assemble-button');
   await page.waitForFunction(() => window.__explorer.getState().explosion === 0);
   assert.ok(await page.evaluate(() => window.__explorer.getState().parts.every(p => p.position.every((v, i) => Math.abs(v - p.assembled[i]) < 1e-7))));
+  assert.equal(await page.$eval('#move-button', element => element.disabled), true);
+  await page.screenshot({ path: path.join(artifacts, 'assembled.png') });
   await page.click('#explode-button');
   await page.waitForFunction(() => window.__explorer.getState().explosion === 1);
   assert.ok(await page.evaluate(() => window.__explorer.getState().parts.every(p => p.position.every((v, i) => Math.abs(v - p.exploded[i]) < 1e-7))));
@@ -49,15 +53,19 @@ try {
   await page.click('#restore-part-button');
   assert.equal(await page.evaluate(() => window.__explorer.getState().moving), false);
   await page.click('#show-all-button');
-  assert.equal(await page.evaluate(() => window.__explorer.getState().visible), 75);
+  assert.equal(await page.evaluate(() => window.__explorer.getState().visible), 57);
   await page.click('#hide-button');
-  assert.equal(await page.evaluate(() => window.__explorer.getState().visible), 74);
+  assert.equal(await page.evaluate(() => window.__explorer.getState().visible), 56);
   await page.click('#show-all-button');
   await page.click('#reset-button');
   await page.waitForTimeout(900);
 
   const point = await page.evaluate(() => window.__explorer.project('Outlet_01_Faceplate', [0, .0016, 0]));
   await page.mouse.click(point.x, point.y);
+  assert.equal(await page.evaluate(() => window.__explorer.getState().selected), 'Outlet_01_Faceplate');
+  // A click on the actual decal must resolve the same faceplate owner.
+  const logoPoint = await page.evaluate(() => window.__explorer.project('Outlet_01_PowerConnex_Logo'));
+  await page.mouse.click(logoPoint.x, logoPoint.y);
   assert.equal(await page.evaluate(() => window.__explorer.getState().selected), 'Outlet_01_Faceplate');
   await page.click('#focus-button');
   await page.waitForTimeout(800);
@@ -88,6 +96,6 @@ try {
   await page.type('#part-search', 'ทองแดง');
   assert.equal(await page.$$eval('.part-select', elements => elements.length), 3);
   assert.deepEqual(errors, []);
-  console.log('PASS: model load; 75 parts; pose endpoints; search; selection; isolation; hide/show; move controls; raycast; camera; dialogs; responsive layout.');
+  console.log('PASS: model load; 57 logical parts / 77 meshes; assembled geometry; attached decal picking; pose endpoints; search; isolation; hide/show; move controls; camera; dialogs; responsive layout.');
 } catch (error) { console.error('Browser checks failed:', error.stack); process.exitCode = 1; }
 finally { if (browser) await browser.close(); }
