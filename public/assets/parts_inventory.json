@@ -1,0 +1,1881 @@
+{
+  "units": "meters",
+  "triangles": 43562,
+  "parts": [
+    {
+      "name": "Aluminum_Alloy_Housing",
+      "parent": "Housing_And_Mounting",
+      "triangles": 756,
+      "assembled_location_m": [
+        0,
+        0,
+        0
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "assembled_location_gltf_m": [
+        0,
+        0,
+        0
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "End_Plate_Left",
+      "parent": "Housing_And_Mounting",
+      "triangles": 558,
+      "assembled_location_m": [
+        -0.15130000000000002,
+        0.0,
+        0.021500000000000002
+      ],
+      "exploded_location_m": [
+        -0.17800000309944153,
+        0.0,
+        0.0215000007301569
+      ],
+      "assembled_location_gltf_m": [
+        -0.15130000000000002,
+        0.021500000000000002,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.17800000309944153,
+        0.0215000007301569,
+        -0.0
+      ]
+    },
+    {
+      "name": "Mounting_Bracket_Left",
+      "parent": "Housing_And_Mounting",
+      "triangles": 1090,
+      "assembled_location_m": [
+        -0.153,
+        0.0,
+        0.0
+      ],
+      "exploded_location_m": [
+        -0.21799999475479126,
+        0.0,
+        0.0
+      ],
+      "assembled_location_gltf_m": [
+        -0.153,
+        0.0,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.21799999475479126,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "End_Plate_Right",
+      "parent": "Housing_And_Mounting",
+      "triangles": 380,
+      "assembled_location_m": [
+        0.15130000000000002,
+        0.0,
+        0.021500000000000002
+      ],
+      "exploded_location_m": [
+        0.17800000309944153,
+        0.0,
+        0.0215000007301569
+      ],
+      "assembled_location_gltf_m": [
+        0.15130000000000002,
+        0.021500000000000002,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.17800000309944153,
+        0.0215000007301569,
+        -0.0
+      ]
+    },
+    {
+      "name": "Mounting_Bracket_Right",
+      "parent": "Housing_And_Mounting",
+      "triangles": 1090,
+      "assembled_location_m": [
+        0.153,
+        0.0,
+        0.0
+      ],
+      "exploded_location_m": [
+        0.21799999475479126,
+        0.0,
+        0.0
+      ],
+      "assembled_location_gltf_m": [
+        0.153,
+        0.0,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.21799999475479126,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "PVC_Insulation_Liner",
+      "parent": "Conductors_And_Insulation",
+      "triangles": 108,
+      "assembled_location_m": [
+        0.0,
+        0.0,
+        0.008
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.0,
+        0.04800000041723251
+      ],
+      "assembled_location_gltf_m": [
+        0.0,
+        0.008,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.04800000041723251,
+        -0.0
+      ]
+    },
+    {
+      "name": "PVC_Insulation_Retainer_Front",
+      "parent": "Conductors_And_Insulation",
+      "triangles": 108,
+      "assembled_location_m": [
+        0.0,
+        -0.026000000000000002,
+        0.011
+      ],
+      "exploded_location_m": [
+        0.0,
+        -0.026000000536441803,
+        0.050999999046325684
+      ],
+      "assembled_location_gltf_m": [
+        0.0,
+        0.011,
+        0.026000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.050999999046325684,
+        0.026000000536441803
+      ]
+    },
+    {
+      "name": "PVC_Insulation_Retainer_Back",
+      "parent": "Conductors_And_Insulation",
+      "triangles": 108,
+      "assembled_location_m": [
+        0.0,
+        0.026000000000000002,
+        0.011
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.026000000536441803,
+        0.050999999046325684
+      ],
+      "assembled_location_gltf_m": [
+        0.0,
+        0.011,
+        -0.026000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.050999999046325684,
+        -0.026000000536441803
+      ]
+    },
+    {
+      "name": "Solid_Copper_Bar_01",
+      "parent": "Conductors_And_Insulation",
+      "triangles": 108,
+      "assembled_location_m": [
+        0.0,
+        -0.018000000000000002,
+        0.014
+      ],
+      "exploded_location_m": [
+        0.0,
+        -0.017999999225139618,
+        0.06199999898672104
+      ],
+      "assembled_location_gltf_m": [
+        0.0,
+        0.014,
+        0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.06199999898672104,
+        0.017999999225139618
+      ]
+    },
+    {
+      "name": "Solid_Copper_Bar_02",
+      "parent": "Conductors_And_Insulation",
+      "triangles": 108,
+      "assembled_location_m": [
+        0.0,
+        0.0,
+        0.014
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.0,
+        0.06199999898672104
+      ],
+      "assembled_location_gltf_m": [
+        0.0,
+        0.014,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.06199999898672104,
+        -0.0
+      ]
+    },
+    {
+      "name": "Solid_Copper_Bar_03",
+      "parent": "Conductors_And_Insulation",
+      "triangles": 108,
+      "assembled_location_m": [
+        0.0,
+        0.018000000000000002,
+        0.014
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.017999999225139618,
+        0.06199999898672104
+      ],
+      "assembled_location_gltf_m": [
+        0.0,
+        0.014,
+        -0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.06199999898672104,
+        -0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_01_Molded_Outlet_Body",
+      "parent": "Outlet_01",
+      "triangles": 2436,
+      "assembled_location_m": [
+        -0.105,
+        0.0,
+        0.028
+      ],
+      "exploded_location_m": [
+        -0.10499999672174454,
+        0.0,
+        0.07599999755620956
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.028,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.10499999672174454,
+        0.07599999755620956,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_01_Copper_Coated_Nickel_Contact_01",
+      "parent": "Outlet_01",
+      "triangles": 432,
+      "assembled_location_m": [
+        -0.105,
+        -0.018000000000000002,
+        0.022
+      ],
+      "exploded_location_m": [
+        -0.10499999672174454,
+        -0.017999999225139618,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.022,
+        0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        -0.10499999672174454,
+        0.07000000029802322,
+        0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_01_Lead_Free_Solder_01",
+      "parent": "Outlet_01",
+      "triangles": 188,
+      "assembled_location_m": [
+        -0.105,
+        -0.018000000000000002,
+        0.016
+      ],
+      "exploded_location_m": [
+        -0.10499999672174454,
+        -0.017999999225139618,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.016,
+        0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        -0.10499999672174454,
+        0.06400000303983688,
+        0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_01_Copper_Coated_Nickel_Contact_02",
+      "parent": "Outlet_01",
+      "triangles": 432,
+      "assembled_location_m": [
+        -0.105,
+        0.0,
+        0.022
+      ],
+      "exploded_location_m": [
+        -0.10499999672174454,
+        0.0,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.022,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.10499999672174454,
+        0.07000000029802322,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_01_Lead_Free_Solder_02",
+      "parent": "Outlet_01",
+      "triangles": 188,
+      "assembled_location_m": [
+        -0.105,
+        0.0,
+        0.016
+      ],
+      "exploded_location_m": [
+        -0.10499999672174454,
+        0.0,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.016,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.10499999672174454,
+        0.06400000303983688,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_01_Copper_Coated_Nickel_Contact_03",
+      "parent": "Outlet_01",
+      "triangles": 432,
+      "assembled_location_m": [
+        -0.105,
+        0.018000000000000002,
+        0.022
+      ],
+      "exploded_location_m": [
+        -0.10499999672174454,
+        0.017999999225139618,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.022,
+        -0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        -0.10499999672174454,
+        0.07000000029802322,
+        -0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_01_Lead_Free_Solder_03",
+      "parent": "Outlet_01",
+      "triangles": 188,
+      "assembled_location_m": [
+        -0.105,
+        0.018000000000000002,
+        0.016
+      ],
+      "exploded_location_m": [
+        -0.10499999672174454,
+        0.017999999225139618,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.016,
+        -0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        -0.10499999672174454,
+        0.06400000303983688,
+        -0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_01_Shutter_Carrier",
+      "parent": "Outlet_01",
+      "triangles": 698,
+      "assembled_location_m": [
+        -0.105,
+        0.0,
+        0.039
+      ],
+      "exploded_location_m": [
+        -0.10499999672174454,
+        0.009999999776482582,
+        0.11900000274181366
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.039,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.10499999672174454,
+        0.11900000274181366,
+        -0.009999999776482582
+      ]
+    },
+    {
+      "name": "Outlet_01_Industrial_Spring",
+      "parent": "Outlet_01",
+      "triangles": 2688,
+      "assembled_location_m": [
+        -0.105,
+        0.01,
+        0.043
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.043,
+        -0.01
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_01_Safety_Shutter",
+      "parent": "Outlet_01",
+      "triangles": 212,
+      "assembled_location_m": [
+        -0.105,
+        -0.002,
+        0.047
+      ],
+      "exploded_location_m": [
+        -0.10499999672174454,
+        -0.0020000000949949026,
+        0.13300000131130219
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.047,
+        0.002
+      ],
+      "exploded_location_gltf_m": [
+        -0.10499999672174454,
+        0.13300000131130219,
+        0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_01_Faceplate",
+      "parent": "Outlet_01",
+      "triangles": 1744,
+      "assembled_location_m": [
+        -0.105,
+        0.0,
+        0.055
+      ],
+      "exploded_location_m": [
+        -0.10499999672174454,
+        -0.020999999716877937,
+        0.1525299996137619
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.055,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.10499999672174454,
+        0.1525299996137619,
+        0.020999999716877937
+      ]
+    },
+    {
+      "name": "Outlet_01_PowerConnex_Logo",
+      "parent": "Outlet_01",
+      "triangles": 2,
+      "assembled_location_m": [
+        -0.105,
+        -0.021,
+        0.056530000000000004
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "assembled_location_gltf_m": [
+        -0.105,
+        0.056530000000000004,
+        0.021
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_01_Marking_L",
+      "parent": "Outlet_01",
+      "triangles": 4,
+      "assembled_location_m": [
+        -0.13,
+        0.002,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        -0.12999999523162842,
+        0.0020000000949949026,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        -0.13,
+        0.05653999999999999,
+        -0.002
+      ],
+      "exploded_location_gltf_m": [
+        -0.12999999523162842,
+        0.15253999829292297,
+        -0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_01_Marking_N",
+      "parent": "Outlet_01",
+      "triangles": 8,
+      "assembled_location_m": [
+        -0.08,
+        0.002,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        -0.07999999821186066,
+        0.0020000000949949026,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        -0.08,
+        0.05653999999999999,
+        -0.002
+      ],
+      "exploded_location_gltf_m": [
+        -0.07999999821186066,
+        0.15253999829292297,
+        -0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_01_Marking_13A",
+      "parent": "Outlet_01",
+      "triangles": 38,
+      "assembled_location_m": [
+        -0.125,
+        0.027,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        -0.125,
+        0.027000000700354576,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        -0.125,
+        0.05653999999999999,
+        -0.027
+      ],
+      "exploded_location_gltf_m": [
+        -0.125,
+        0.15253999829292297,
+        -0.027000000700354576
+      ]
+    },
+    {
+      "name": "Outlet_01_Marking_250VAC",
+      "parent": "Outlet_01",
+      "triangles": 70,
+      "assembled_location_m": [
+        -0.085,
+        0.027,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        -0.08500000089406967,
+        0.027000000700354576,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        -0.085,
+        0.05653999999999999,
+        -0.027
+      ],
+      "exploded_location_gltf_m": [
+        -0.08500000089406967,
+        0.15253999829292297,
+        -0.027000000700354576
+      ]
+    },
+    {
+      "name": "Outlet_02_Molded_Outlet_Body",
+      "parent": "Outlet_02",
+      "triangles": 2436,
+      "assembled_location_m": [
+        -0.035,
+        0.0,
+        0.028
+      ],
+      "exploded_location_m": [
+        -0.03500000014901161,
+        0.0,
+        0.07599999755620956
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.028,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.03500000014901161,
+        0.07599999755620956,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_02_Copper_Coated_Nickel_Contact_01",
+      "parent": "Outlet_02",
+      "triangles": 432,
+      "assembled_location_m": [
+        -0.035,
+        -0.018000000000000002,
+        0.022
+      ],
+      "exploded_location_m": [
+        -0.03500000014901161,
+        -0.017999999225139618,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.022,
+        0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        -0.03500000014901161,
+        0.07000000029802322,
+        0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_02_Lead_Free_Solder_01",
+      "parent": "Outlet_02",
+      "triangles": 188,
+      "assembled_location_m": [
+        -0.035,
+        -0.018000000000000002,
+        0.016
+      ],
+      "exploded_location_m": [
+        -0.03500000014901161,
+        -0.017999999225139618,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.016,
+        0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        -0.03500000014901161,
+        0.06400000303983688,
+        0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_02_Copper_Coated_Nickel_Contact_02",
+      "parent": "Outlet_02",
+      "triangles": 432,
+      "assembled_location_m": [
+        -0.035,
+        0.0,
+        0.022
+      ],
+      "exploded_location_m": [
+        -0.03500000014901161,
+        0.0,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.022,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.03500000014901161,
+        0.07000000029802322,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_02_Lead_Free_Solder_02",
+      "parent": "Outlet_02",
+      "triangles": 188,
+      "assembled_location_m": [
+        -0.035,
+        0.0,
+        0.016
+      ],
+      "exploded_location_m": [
+        -0.03500000014901161,
+        0.0,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.016,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.03500000014901161,
+        0.06400000303983688,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_02_Copper_Coated_Nickel_Contact_03",
+      "parent": "Outlet_02",
+      "triangles": 432,
+      "assembled_location_m": [
+        -0.035,
+        0.018000000000000002,
+        0.022
+      ],
+      "exploded_location_m": [
+        -0.03500000014901161,
+        0.017999999225139618,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.022,
+        -0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        -0.03500000014901161,
+        0.07000000029802322,
+        -0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_02_Lead_Free_Solder_03",
+      "parent": "Outlet_02",
+      "triangles": 188,
+      "assembled_location_m": [
+        -0.035,
+        0.018000000000000002,
+        0.016
+      ],
+      "exploded_location_m": [
+        -0.03500000014901161,
+        0.017999999225139618,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.016,
+        -0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        -0.03500000014901161,
+        0.06400000303983688,
+        -0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_02_Shutter_Carrier",
+      "parent": "Outlet_02",
+      "triangles": 698,
+      "assembled_location_m": [
+        -0.035,
+        0.0,
+        0.039
+      ],
+      "exploded_location_m": [
+        -0.03500000014901161,
+        0.009999999776482582,
+        0.11900000274181366
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.039,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.03500000014901161,
+        0.11900000274181366,
+        -0.009999999776482582
+      ]
+    },
+    {
+      "name": "Outlet_02_Industrial_Spring",
+      "parent": "Outlet_02",
+      "triangles": 2688,
+      "assembled_location_m": [
+        -0.035,
+        0.01,
+        0.043
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.043,
+        -0.01
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_02_Safety_Shutter",
+      "parent": "Outlet_02",
+      "triangles": 212,
+      "assembled_location_m": [
+        -0.035,
+        -0.002,
+        0.047
+      ],
+      "exploded_location_m": [
+        -0.03500000014901161,
+        -0.0020000000949949026,
+        0.13300000131130219
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.047,
+        0.002
+      ],
+      "exploded_location_gltf_m": [
+        -0.03500000014901161,
+        0.13300000131130219,
+        0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_02_Faceplate",
+      "parent": "Outlet_02",
+      "triangles": 1744,
+      "assembled_location_m": [
+        -0.035,
+        0.0,
+        0.055
+      ],
+      "exploded_location_m": [
+        -0.03500000014901161,
+        -0.020999999716877937,
+        0.1525299996137619
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.055,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        -0.03500000014901161,
+        0.1525299996137619,
+        0.020999999716877937
+      ]
+    },
+    {
+      "name": "Outlet_02_PowerConnex_Logo",
+      "parent": "Outlet_02",
+      "triangles": 2,
+      "assembled_location_m": [
+        -0.035,
+        -0.021,
+        0.056530000000000004
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "assembled_location_gltf_m": [
+        -0.035,
+        0.056530000000000004,
+        0.021
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_02_Marking_L",
+      "parent": "Outlet_02",
+      "triangles": 4,
+      "assembled_location_m": [
+        -0.06,
+        0.002,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        -0.05999999865889549,
+        0.0020000000949949026,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        -0.06,
+        0.05653999999999999,
+        -0.002
+      ],
+      "exploded_location_gltf_m": [
+        -0.05999999865889549,
+        0.15253999829292297,
+        -0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_02_Marking_N",
+      "parent": "Outlet_02",
+      "triangles": 8,
+      "assembled_location_m": [
+        -0.01,
+        0.002,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        -0.009999999776482582,
+        0.0020000000949949026,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        -0.01,
+        0.05653999999999999,
+        -0.002
+      ],
+      "exploded_location_gltf_m": [
+        -0.009999999776482582,
+        0.15253999829292297,
+        -0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_02_Marking_13A",
+      "parent": "Outlet_02",
+      "triangles": 38,
+      "assembled_location_m": [
+        -0.055,
+        0.027,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        -0.054999999701976776,
+        0.027000000700354576,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        -0.055,
+        0.05653999999999999,
+        -0.027
+      ],
+      "exploded_location_gltf_m": [
+        -0.054999999701976776,
+        0.15253999829292297,
+        -0.027000000700354576
+      ]
+    },
+    {
+      "name": "Outlet_02_Marking_250VAC",
+      "parent": "Outlet_02",
+      "triangles": 70,
+      "assembled_location_m": [
+        -0.015,
+        0.027,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        -0.014999999664723873,
+        0.027000000700354576,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        -0.015,
+        0.05653999999999999,
+        -0.027
+      ],
+      "exploded_location_gltf_m": [
+        -0.014999999664723873,
+        0.15253999829292297,
+        -0.027000000700354576
+      ]
+    },
+    {
+      "name": "Outlet_03_Molded_Outlet_Body",
+      "parent": "Outlet_03",
+      "triangles": 2436,
+      "assembled_location_m": [
+        0.035,
+        0.0,
+        0.028
+      ],
+      "exploded_location_m": [
+        0.03500000014901161,
+        0.0,
+        0.07599999755620956
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.028,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.03500000014901161,
+        0.07599999755620956,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_03_Copper_Coated_Nickel_Contact_01",
+      "parent": "Outlet_03",
+      "triangles": 432,
+      "assembled_location_m": [
+        0.035,
+        -0.018000000000000002,
+        0.022
+      ],
+      "exploded_location_m": [
+        0.03500000014901161,
+        -0.017999999225139618,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.022,
+        0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.03500000014901161,
+        0.07000000029802322,
+        0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_03_Lead_Free_Solder_01",
+      "parent": "Outlet_03",
+      "triangles": 188,
+      "assembled_location_m": [
+        0.035,
+        -0.018000000000000002,
+        0.016
+      ],
+      "exploded_location_m": [
+        0.03500000014901161,
+        -0.017999999225139618,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.016,
+        0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.03500000014901161,
+        0.06400000303983688,
+        0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_03_Copper_Coated_Nickel_Contact_02",
+      "parent": "Outlet_03",
+      "triangles": 432,
+      "assembled_location_m": [
+        0.035,
+        0.0,
+        0.022
+      ],
+      "exploded_location_m": [
+        0.03500000014901161,
+        0.0,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.022,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.03500000014901161,
+        0.07000000029802322,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_03_Lead_Free_Solder_02",
+      "parent": "Outlet_03",
+      "triangles": 188,
+      "assembled_location_m": [
+        0.035,
+        0.0,
+        0.016
+      ],
+      "exploded_location_m": [
+        0.03500000014901161,
+        0.0,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.016,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.03500000014901161,
+        0.06400000303983688,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_03_Copper_Coated_Nickel_Contact_03",
+      "parent": "Outlet_03",
+      "triangles": 432,
+      "assembled_location_m": [
+        0.035,
+        0.018000000000000002,
+        0.022
+      ],
+      "exploded_location_m": [
+        0.03500000014901161,
+        0.017999999225139618,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.022,
+        -0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.03500000014901161,
+        0.07000000029802322,
+        -0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_03_Lead_Free_Solder_03",
+      "parent": "Outlet_03",
+      "triangles": 188,
+      "assembled_location_m": [
+        0.035,
+        0.018000000000000002,
+        0.016
+      ],
+      "exploded_location_m": [
+        0.03500000014901161,
+        0.017999999225139618,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.016,
+        -0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.03500000014901161,
+        0.06400000303983688,
+        -0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_03_Shutter_Carrier",
+      "parent": "Outlet_03",
+      "triangles": 698,
+      "assembled_location_m": [
+        0.035,
+        0.0,
+        0.039
+      ],
+      "exploded_location_m": [
+        0.03500000014901161,
+        0.009999999776482582,
+        0.11900000274181366
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.039,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.03500000014901161,
+        0.11900000274181366,
+        -0.009999999776482582
+      ]
+    },
+    {
+      "name": "Outlet_03_Industrial_Spring",
+      "parent": "Outlet_03",
+      "triangles": 2688,
+      "assembled_location_m": [
+        0.035,
+        0.01,
+        0.043
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.043,
+        -0.01
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_03_Safety_Shutter",
+      "parent": "Outlet_03",
+      "triangles": 212,
+      "assembled_location_m": [
+        0.035,
+        -0.002,
+        0.047
+      ],
+      "exploded_location_m": [
+        0.03500000014901161,
+        -0.0020000000949949026,
+        0.13300000131130219
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.047,
+        0.002
+      ],
+      "exploded_location_gltf_m": [
+        0.03500000014901161,
+        0.13300000131130219,
+        0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_03_Faceplate",
+      "parent": "Outlet_03",
+      "triangles": 1744,
+      "assembled_location_m": [
+        0.035,
+        0.0,
+        0.055
+      ],
+      "exploded_location_m": [
+        0.03500000014901161,
+        -0.020999999716877937,
+        0.1525299996137619
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.055,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.03500000014901161,
+        0.1525299996137619,
+        0.020999999716877937
+      ]
+    },
+    {
+      "name": "Outlet_03_PowerConnex_Logo",
+      "parent": "Outlet_03",
+      "triangles": 2,
+      "assembled_location_m": [
+        0.035,
+        -0.021,
+        0.056530000000000004
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "assembled_location_gltf_m": [
+        0.035,
+        0.056530000000000004,
+        0.021
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_03_Marking_L",
+      "parent": "Outlet_03",
+      "triangles": 4,
+      "assembled_location_m": [
+        0.01,
+        0.002,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        0.009999999776482582,
+        0.0020000000949949026,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        0.01,
+        0.05653999999999999,
+        -0.002
+      ],
+      "exploded_location_gltf_m": [
+        0.009999999776482582,
+        0.15253999829292297,
+        -0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_03_Marking_N",
+      "parent": "Outlet_03",
+      "triangles": 8,
+      "assembled_location_m": [
+        0.06,
+        0.002,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        0.05999999865889549,
+        0.0020000000949949026,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        0.06,
+        0.05653999999999999,
+        -0.002
+      ],
+      "exploded_location_gltf_m": [
+        0.05999999865889549,
+        0.15253999829292297,
+        -0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_03_Marking_13A",
+      "parent": "Outlet_03",
+      "triangles": 38,
+      "assembled_location_m": [
+        0.015,
+        0.027,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        0.014999999664723873,
+        0.027000000700354576,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        0.015,
+        0.05653999999999999,
+        -0.027
+      ],
+      "exploded_location_gltf_m": [
+        0.014999999664723873,
+        0.15253999829292297,
+        -0.027000000700354576
+      ]
+    },
+    {
+      "name": "Outlet_03_Marking_250VAC",
+      "parent": "Outlet_03",
+      "triangles": 70,
+      "assembled_location_m": [
+        0.055,
+        0.027,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        0.054999999701976776,
+        0.027000000700354576,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        0.055,
+        0.05653999999999999,
+        -0.027
+      ],
+      "exploded_location_gltf_m": [
+        0.054999999701976776,
+        0.15253999829292297,
+        -0.027000000700354576
+      ]
+    },
+    {
+      "name": "Outlet_04_Molded_Outlet_Body",
+      "parent": "Outlet_04",
+      "triangles": 2436,
+      "assembled_location_m": [
+        0.105,
+        0.0,
+        0.028
+      ],
+      "exploded_location_m": [
+        0.10499999672174454,
+        0.0,
+        0.07599999755620956
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.028,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.10499999672174454,
+        0.07599999755620956,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_04_Copper_Coated_Nickel_Contact_01",
+      "parent": "Outlet_04",
+      "triangles": 432,
+      "assembled_location_m": [
+        0.105,
+        -0.018000000000000002,
+        0.022
+      ],
+      "exploded_location_m": [
+        0.10499999672174454,
+        -0.017999999225139618,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.022,
+        0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.10499999672174454,
+        0.07000000029802322,
+        0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_04_Lead_Free_Solder_01",
+      "parent": "Outlet_04",
+      "triangles": 188,
+      "assembled_location_m": [
+        0.105,
+        -0.018000000000000002,
+        0.016
+      ],
+      "exploded_location_m": [
+        0.10499999672174454,
+        -0.017999999225139618,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.016,
+        0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.10499999672174454,
+        0.06400000303983688,
+        0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_04_Copper_Coated_Nickel_Contact_02",
+      "parent": "Outlet_04",
+      "triangles": 432,
+      "assembled_location_m": [
+        0.105,
+        0.0,
+        0.022
+      ],
+      "exploded_location_m": [
+        0.10499999672174454,
+        0.0,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.022,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.10499999672174454,
+        0.07000000029802322,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_04_Lead_Free_Solder_02",
+      "parent": "Outlet_04",
+      "triangles": 188,
+      "assembled_location_m": [
+        0.105,
+        0.0,
+        0.016
+      ],
+      "exploded_location_m": [
+        0.10499999672174454,
+        0.0,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.016,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.10499999672174454,
+        0.06400000303983688,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_04_Copper_Coated_Nickel_Contact_03",
+      "parent": "Outlet_04",
+      "triangles": 432,
+      "assembled_location_m": [
+        0.105,
+        0.018000000000000002,
+        0.022
+      ],
+      "exploded_location_m": [
+        0.10499999672174454,
+        0.017999999225139618,
+        0.07000000029802322
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.022,
+        -0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.10499999672174454,
+        0.07000000029802322,
+        -0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_04_Lead_Free_Solder_03",
+      "parent": "Outlet_04",
+      "triangles": 188,
+      "assembled_location_m": [
+        0.105,
+        0.018000000000000002,
+        0.016
+      ],
+      "exploded_location_m": [
+        0.10499999672174454,
+        0.017999999225139618,
+        0.06400000303983688
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.016,
+        -0.018000000000000002
+      ],
+      "exploded_location_gltf_m": [
+        0.10499999672174454,
+        0.06400000303983688,
+        -0.017999999225139618
+      ]
+    },
+    {
+      "name": "Outlet_04_Shutter_Carrier",
+      "parent": "Outlet_04",
+      "triangles": 698,
+      "assembled_location_m": [
+        0.105,
+        0.0,
+        0.039
+      ],
+      "exploded_location_m": [
+        0.10499999672174454,
+        0.009999999776482582,
+        0.11900000274181366
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.039,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.10499999672174454,
+        0.11900000274181366,
+        -0.009999999776482582
+      ]
+    },
+    {
+      "name": "Outlet_04_Industrial_Spring",
+      "parent": "Outlet_04",
+      "triangles": 2688,
+      "assembled_location_m": [
+        0.105,
+        0.01,
+        0.043
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.043,
+        -0.01
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_04_Safety_Shutter",
+      "parent": "Outlet_04",
+      "triangles": 212,
+      "assembled_location_m": [
+        0.105,
+        -0.002,
+        0.047
+      ],
+      "exploded_location_m": [
+        0.10499999672174454,
+        -0.0020000000949949026,
+        0.13300000131130219
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.047,
+        0.002
+      ],
+      "exploded_location_gltf_m": [
+        0.10499999672174454,
+        0.13300000131130219,
+        0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_04_Faceplate",
+      "parent": "Outlet_04",
+      "triangles": 1744,
+      "assembled_location_m": [
+        0.105,
+        0.0,
+        0.055
+      ],
+      "exploded_location_m": [
+        0.10499999672174454,
+        -0.020999999716877937,
+        0.1525299996137619
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.055,
+        -0.0
+      ],
+      "exploded_location_gltf_m": [
+        0.10499999672174454,
+        0.1525299996137619,
+        0.020999999716877937
+      ]
+    },
+    {
+      "name": "Outlet_04_PowerConnex_Logo",
+      "parent": "Outlet_04",
+      "triangles": 2,
+      "assembled_location_m": [
+        0.105,
+        -0.021,
+        0.056530000000000004
+      ],
+      "exploded_location_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "assembled_location_gltf_m": [
+        0.105,
+        0.056530000000000004,
+        0.021
+      ],
+      "exploded_location_gltf_m": [
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Outlet_04_Marking_L",
+      "parent": "Outlet_04",
+      "triangles": 4,
+      "assembled_location_m": [
+        0.08,
+        0.002,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        0.07999999821186066,
+        0.0020000000949949026,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        0.08,
+        0.05653999999999999,
+        -0.002
+      ],
+      "exploded_location_gltf_m": [
+        0.07999999821186066,
+        0.15253999829292297,
+        -0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_04_Marking_N",
+      "parent": "Outlet_04",
+      "triangles": 8,
+      "assembled_location_m": [
+        0.13,
+        0.002,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        0.12999999523162842,
+        0.0020000000949949026,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        0.13,
+        0.05653999999999999,
+        -0.002
+      ],
+      "exploded_location_gltf_m": [
+        0.12999999523162842,
+        0.15253999829292297,
+        -0.0020000000949949026
+      ]
+    },
+    {
+      "name": "Outlet_04_Marking_13A",
+      "parent": "Outlet_04",
+      "triangles": 38,
+      "assembled_location_m": [
+        0.085,
+        0.027,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        0.08500000089406967,
+        0.027000000700354576,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        0.085,
+        0.05653999999999999,
+        -0.027
+      ],
+      "exploded_location_gltf_m": [
+        0.08500000089406967,
+        0.15253999829292297,
+        -0.027000000700354576
+      ]
+    },
+    {
+      "name": "Outlet_04_Marking_250VAC",
+      "parent": "Outlet_04",
+      "triangles": 70,
+      "assembled_location_m": [
+        0.125,
+        0.027,
+        0.05653999999999999
+      ],
+      "exploded_location_m": [
+        0.125,
+        0.027000000700354576,
+        0.15253999829292297
+      ],
+      "assembled_location_gltf_m": [
+        0.125,
+        0.05653999999999999,
+        -0.027
+      ],
+      "exploded_location_gltf_m": [
+        0.125,
+        0.15253999829292297,
+        -0.027000000700354576
+      ]
+    }
+  ]
+}

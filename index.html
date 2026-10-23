@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f2ec" />
+    <meta name="description" content="สำรวจรางไฟ Power Connex แบบ 3 มิติ เลือก ย้าย และแยกดูชิ้นส่วนภายในได้ทุกชิ้น" />
+    <title>Power Connex — Inside the connection</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="./" class="brand" aria-label="Power Connex หน้าหลัก"><span class="brand-symbol">↯</span><span>POWER<br />CONNEX<span class="brand-dot">®</span></span></a>
+      <span class="header-divider"></span>
+      <div class="workspace-title">PRODUCT EXPLORER<span>มองลึกถึงทุกการเชื่อมต่อ</span></div>
+      <nav class="header-actions" aria-label="เมนูหลัก">
+        <button class="text-button" id="references-button"><i data-icon="images"></i><span>ภาพอ้างอิง</span></button>
+        <button class="text-button" id="help-button" aria-label="วิธีใช้งาน"><i data-icon="help"></i></button>
+        <a class="download-button" href="./assets/powerconnex_exploded.glb" download><i data-icon="download"></i><span>ดาวน์โหลด 3D</span></a>
+      </nav>
+    </header>
+
+    <main class="workspace">
+      <section class="stage" id="stage" aria-label="พื้นที่แสดงโมเดล 3 มิติ">
+        <div class="stage-heading">
+          <div class="eyebrow"><span class="orange-line"></span> ENGINEERED, INSIDE OUT.</div>
+          <h1>Inside the<br /><span>connection.</span></h1>
+          <p>รางไฟหนึ่งตัว ทุกรายละเอียดที่เชื่อมต่อกัน</p>
+        </div>
+        <div class="product-badge"><span class="live-dot"></span> PCX / 04 <span class="badge-divider">|</span><span>4 OUTLETS</span></div>
+        <div id="viewport" tabindex="0" role="application" aria-label="โมเดลรางไฟ ลากเพื่อหมุน เลื่อนเพื่อซูม คลิกเพื่อเลือกชิ้นส่วน ใช้รายการชิ้นส่วนสำหรับคีย์บอร์ด"></div>
+        <div class="view-toolbar" aria-label="มุมมองกล้อง">
+          <button class="view-button active" data-view="iso" aria-pressed="true">ISO</button>
+          <button class="view-button" data-view="front" aria-pressed="false">FRONT</button>
+          <button class="view-button" data-view="top" aria-pressed="false">TOP</button>
+          <span class="toolbar-separator"></span>
+          <button class="icon-button" id="fit-button" title="จัดโมเดลให้อยู่กลางจอ (F)" aria-label="จัดโมเดลให้อยู่กลางจอ"><i data-icon="fit"></i></button>
+          <button class="icon-button" id="rotate-button" title="หมุนอัตโนมัติ" aria-label="หมุนอัตโนมัติ" aria-pressed="false"><i data-icon="rotate"></i></button>
+          <button class="icon-button" id="reset-button" title="เริ่มต้นใหม่" aria-label="เริ่มต้นใหม่"><i data-icon="reset"></i></button>
+        </div>
+        <div class="stage-caption"><span class="tiny-cross">+</span><span id="stage-caption">EXPLODED VIEW</span><span class="caption-line"></span><span>01—04</span></div>
+        <div class="selection-tag" id="selection-tag" hidden><span class="live-dot"></span><span id="selection-tag-text"></span><button id="clear-selection" aria-label="ยกเลิกการเลือก"><i data-icon="close"></i></button></div>
+        <div id="hover-label" class="hover-label" hidden></div>
+        <div class="loading" id="loading" role="status"><div class="loading-ring"></div><strong id="loading-title">กำลังเปิดโมเดล</strong><span id="loading-message">เตรียมชิ้นส่วนและวัสดุ…</span></div>
+        <div class="error-state" id="error-state" hidden role="alert"><img src="./assets/model-preview.png" alt="ภาพรางไฟแบบแยกชิ้น" /><div><h2>ยังเปิดโมเดล 3 มิติไม่ได้</h2><p id="error-message"></p><button id="retry-button" class="solid-button">ลองอีกครั้ง</button></div></div>
+        <div class="pose-dock">
+          <div class="pose-heading"><span><i data-icon="layers"></i> แยกดูโครงสร้าง</span><output id="explosion-value" for="explosion">100<span>%</span></output></div>
+          <input type="range" id="explosion" min="0" max="100" value="100" aria-label="ระดับการแยกชิ้นส่วน" />
+          <div class="pose-labels"><button id="assemble-button">ประกอบสมบูรณ์</button><span class="pose-ticks">· · · · · · · · · · · ·</span><button id="explode-button">แยกทุกชิ้นส่วน</button></div>
+        </div>
+        <div class="canvas-hint"><i data-icon="mouse"></i><span>ลากเพื่อหมุน <b>·</b> เลื่อนเพื่อซูม <b>·</b> คลิกเพื่อเลือก</span></div>
+      </section>
+
+      <aside class="inspector" id="inspector" aria-label="รายการและรายละเอียดชิ้นส่วน">
+        <div class="inspector-header"><div><span class="eyebrow">THE ANATOMY</span><h2>องค์ประกอบ<span id="parts-count">—</span></h2></div><button id="mobile-panel-button" class="icon-button" aria-label="ย่อหรือขยายรายการชิ้นส่วน" aria-expanded="true"><i data-icon="chevron"></i></button></div>
+        <div class="parts-section">
+          <label class="search-box"><i data-icon="search"></i><input id="part-search" type="search" placeholder="ค้นหาชิ้นส่วน…" aria-label="ค้นหาชิ้นส่วน" autocomplete="off" /><kbd>/</kbd></label>
+          <div class="tree-heading"><span>PART HIERARCHY</span><button id="show-all-button" class="text-button small" title="ยกเลิกการซ่อนและแสดงทุกชิ้น"><i data-icon="eye"></i> แสดงทั้งหมด</button></div>
+          <div id="parts-tree" class="parts-tree" aria-label="ชิ้นส่วนของรางไฟ"><p class="tree-empty">กำลังเตรียมรายการ…</p></div>
+        </div>
+        <section class="part-detail" id="part-detail" aria-label="รายละเอียดชิ้นส่วนที่เลือก">
+          <div class="detail-empty" id="detail-empty"><span class="detail-empty-icon"><i data-icon="cursor"></i></span><h3>เริ่มจากชิ้นส่วนที่สนใจ</h3><p>คลิกบนโมเดลหรือเลือกจากรายการ<br />เพื่อดูรายละเอียดและจัดการแต่ละชิ้น</p></div>
+          <div id="detail-content" hidden>
+            <div class="detail-eyebrow"><span class="eyebrow">SELECTED COMPONENT</span><button id="detail-close" class="icon-button" aria-label="ยกเลิกการเลือก"><i data-icon="close"></i></button></div>
+            <h3 id="detail-title"></h3><code id="detail-name"></code>
+            <p class="detail-description" id="detail-description"></p>
+            <div class="material-row"><span id="material-swatch"></span><span id="detail-material"></span><span id="detail-group"></span></div>
+            <div class="part-actions">
+              <button id="focus-button"><i data-icon="focus"></i> โฟกัส</button>
+              <button id="isolate-button" aria-pressed="false"><i data-icon="isolate"></i> ดูเฉพาะชิ้น</button>
+              <button id="hide-button"><i data-icon="eye-off"></i> ซ่อน</button>
+              <button id="move-button" aria-pressed="false"><i data-icon="move"></i> ย้ายชิ้นส่วน</button>
+            </div>
+            <button id="restore-part-button" class="restore-part"><i data-icon="reset"></i> คืนตำแหน่งชิ้นนี้</button>
+          </div>
+        </section>
+        <div class="inspector-footer"><span class="live-dot"></span><span id="visibility-status">75 INDIVIDUAL COMPONENTS</span><span>GLB</span></div>
+      </aside>
+    </main>
+
+    <footer class="footer"><span>POWER CONNEX <span class="footer-slash">/</span> INTERACTIVE ASSEMBLY</span><span>จำลองจากภาพอ้างอิง · ขนาดโดยประมาณ</span><span class="footer-index">EXPLORE IN 3D <i data-icon="arrow-up-right"></i></span></footer>
+    <div id="announcement" class="sr-only" aria-live="polite"></div>
+
+    <dialog id="references-dialog" class="references-dialog"><div class="dialog-heading"><div><span class="eyebrow">SOURCE MATERIAL</span><h2>หนึ่งรางไฟ สามมุมมอง</h2></div><button class="icon-button" data-close-dialog aria-label="ปิดภาพอ้างอิง"><i data-icon="close"></i></button></div><p>ภาพต้นฉบับที่ใช้เทียบรูปทรง สัดส่วน และองค์ประกอบภายในของโมเดล</p><div class="reference-grid"><figure><img src="./assets/reference-1.jpg" alt="ภาพอ้างอิงมุมเฉียง แสดงรางอะลูมิเนียม แถบทองแดง และขายึด" loading="lazy" /><figcaption><span>01</span> วัสดุและโครงสร้างหลัก</figcaption></figure><figure><img src="./assets/reference-2.jpg" alt="ภาพอ้างอิงมุมบน แสดงเต้ารับสี่ชุด สปริง และฉนวน" loading="lazy" /><figcaption><span>02</span> เต้ารับและกลไกภายใน</figcaption></figure><figure><img src="./assets/reference-3.jpg" alt="ภาพอ้างอิงมุมด้านข้าง แยกฝา ชัตเตอร์ สปริง และฐานเป็นชั้น" loading="lazy" /><figcaption><span>03</span> ลำดับการประกอบ</figcaption></figure></div></dialog>
+    <dialog id="help-dialog" class="help-dialog"><div class="dialog-heading"><div><span class="eyebrow">QUICK GUIDE</span><h2>สำรวจได้ในมือคุณ</h2></div><button class="icon-button" data-close-dialog aria-label="ปิดวิธีใช้งาน"><i data-icon="close"></i></button></div><dl class="help-list"><div><dt>หมุนโมเดล</dt><dd>ลากเมาส์ซ้ายหรือลากด้วยนิ้วเดียว</dd></div><div><dt>ซูม / เลื่อนมุมมอง</dt><dd>เลื่อนล้อเมาส์ / ลากเมาส์ขวา<br />บนมือถือใช้สองนิ้วบีบหรือเลื่อน</dd></div><div><dt>เลือกชิ้นส่วน</dt><dd>คลิกบนโมเดล หรือเลือกชื่อจากรายการ<br />ดับเบิลคลิกชิ้นส่วนเพื่อโฟกัส</dd></div><div><dt>ย้ายชิ้นส่วน</dt><dd>เลือกชิ้นแล้วกด “ย้ายชิ้นส่วน”<br />ลากลูกศรแกนสีแดง เขียว หรือน้ำเงิน</dd></div><div><dt>ประกอบ / แยกชิ้น</dt><dd>ปรับสไลเดอร์ด้านล่างโมเดล</dd></div><div><dt>ปุ่มลัด</dt><dd><kbd>F</kbd> จัดมุมมอง <kbd>Esc</kbd> ยกเลิกการเลือก<br /><kbd>/</kbd> ค้นหาชิ้นส่วน <kbd>R</kbd> เริ่มต้นใหม่</dd></div></dl><p class="help-note">โมเดลนี้จำลองรูปทรงจากภาพอ้างอิง ขนาดและส่วนที่มองไม่เห็นเป็นค่าประมาณ</p></dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
